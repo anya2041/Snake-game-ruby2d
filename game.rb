@@ -25,4 +25,12 @@ class Snake
       def grow
         @growing = true
       end
-  
+      
+      def move
+        if !@growing
+          @positions.shift
+        end
+    
+        @positions.push(next_position)
+        @growing = false
+      end
