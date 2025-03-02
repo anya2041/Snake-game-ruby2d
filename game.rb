@@ -34,3 +34,20 @@ class Snake
         @positions.push(next_position)
         @growing = false
       end
+
+      def can_change_direction_to?(new_direction)
+        case @direction
+        when 'up' then new_direction != 'down'
+        when 'down' then new_direction != 'up'
+        when 'left' then new_direction != 'right'
+        when 'right' then new_direction != 'left'
+        end
+      end
+    
+      def x
+        head[0]
+      end
+    
+      def y
+        head[1]
+      end
