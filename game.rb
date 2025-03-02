@@ -63,3 +63,18 @@ class Snake
           new_coords(head[0] + 1, head[1])
         end
       end
+
+      def hit_itself?
+        @positions.uniq.length != @positions.length
+      end
+    
+      private
+    
+      def new_coords(x, y)
+        [x % GRID_WIDTH, y % GRID_HEIGHT]
+      end
+    
+      def head
+        @positions.last
+      end
+    end
