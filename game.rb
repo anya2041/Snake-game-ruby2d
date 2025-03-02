@@ -51,3 +51,15 @@ class Snake
       def y
         head[1]
       end
+
+      def next_position
+        if @direction == 'down'
+          new_coords(head[0], head[1] + 1)
+        elsif @direction == 'up'
+          new_coords(head[0], head[1] - 1)
+        elsif @direction == 'left'
+          new_coords(head[0] - 1, head[1])
+        elsif @direction == 'right'
+          new_coords(head[0] + 1, head[1])
+        end
+      end
