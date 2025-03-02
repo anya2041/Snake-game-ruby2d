@@ -15,4 +15,14 @@ class Snake
       @direction = 'down'
       @growing = false
     end
+    
+    def draw
+        @positions.each do |position|
+          Square.new(x: position[0] * SQUARE_SIZE, y: position[1] * SQUARE_SIZE, size: SQUARE_SIZE - 1, color: 'white')
+        end
+      end
+    
+      def grow
+        @growing = true
+      end
   
